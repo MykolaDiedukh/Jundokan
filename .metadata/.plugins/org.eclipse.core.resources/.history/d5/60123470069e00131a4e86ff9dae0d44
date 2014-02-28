@@ -1,0 +1,156 @@
+package jundokan.view.templates;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.print.Book;
+import java.io.IOException;
+import java.net.URL;
+import java.nio.file.Paths;
+
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
+import javax.swing.tree.*;
+
+import jundokan.view.Property;
+
+
+public class GUIHelp extends JFrame{
+    private JPanel panel1;
+    private JTree  tree1;
+    private JEditorPane editorPane1;
+    private JSplitPane splitPane;
+    private URL helpURL;
+    
+    public GUIHelp() {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(700, 400);
+        init();
+
+    }
+    private class BookInfo {
+        public String bookName;
+        public URL bookURL;
+ 
+        public BookInfo(String book, String filename) {
+            bookName = book;
+            bookURL = getClass().getResource(filename);
+            if (bookURL == null) {
+                System.err.println("Couldn't find file: "
+                                   + filename);
+            }
+        }
+ 
+        public String toString() {
+            return bookName;
+        }
+    }
+    private void initHelp() {
+    	Property prop = new Property(Paths.get(System.getProperty("user.dir"),"jundokan.ini").toString());
+        String s = "index.html";
+        helpURL = getClass().getResource(s);
+        if (helpURL == null) {
+            System.err.println("Couldn't open help file: " + s);
+        } else if (false) {
+            System.out.println("Help URL is " + helpURL);
+        }
+ 
+        displayURL(helpURL);
+    }
+    private void displayURL(URL url) {
+        try {
+            if (url != null) {
+            	editorPane1.setPage(url);
+            } else { //null url
+            editorPane1.setText("File Not Found");
+                if (false) {
+                    System.out.println("Attempted to display a null URL.");
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Attempted to read a bad URL: " + url);
+        }
+    }
+    private void init() {
+        getContentPane().setLayout(new BorderLayout());
+        editorPane1 = new JEditorPane();
+        editorPane1.setEnabled(false);
+        initHelp();
+
+        tree1 = new JTree();
+        tree1.setModel(new DefaultTreeModel(
+        	new DefaultMutableTreeNode("≤нструкц≥€") {
+        		{
+        			DefaultMutableTreeNode node_1;
+        			node_1 = new DefaultMutableTreeNode("«маганн€");
+        				node_1.add(new DefaultMutableTreeNode(new BookInfo("як створити змаганн€", "Informatics.html")));
+        				node_1.add(new DefaultMutableTreeNode(new BookInfo("як редагувати змаганн€", "Eclipse Platform What's New in Juno.htm")));
+        			add(node_1);
+        			node_1 = new DefaultMutableTreeNode("”часники");
+        				node_1.add(new DefaultMutableTreeNode("як добавити учасник≥в"));
+        				node_1.add(new DefaultMutableTreeNode("як редагувати учасник≥в"));
+        				node_1.add(new DefaultMutableTreeNode("як п≥дписати учасник≥в на конкретний тип змаганн€"));
+        				node_1.add(new DefaultMutableTreeNode("як в≥дписати учасник≥в на конкретний тип змаганн€"));
+        			add(node_1);
+        			node_1 = new DefaultMutableTreeNode("ѕроотокли");
+        				node_1.add(new DefaultMutableTreeNode("як друкувати в≥дразу вс≥ протоколи"));
+        				node_1.add(new DefaultMutableTreeNode("як друкувати конкретний протокол"));
+        			add(node_1);
+        			node_1 = new DefaultMutableTreeNode("—≥тки");
+    				node_1.add(new DefaultMutableTreeNode("як створувати с≥тку"));
+    				node_1.add(new DefaultMutableTreeNode("як перейменувати назву с≥тки"));
+    				node_1.add(new DefaultMutableTreeNode("як видалити с≥тку"));
+    				add(node_1);
+    				node_1 = new DefaultMutableTreeNode("‘≥льтри");
+    				node_1.add(new DefaultMutableTreeNode("як користуватис€ ф≥льтроми"));
+    				add(node_1);
+        		}
+        	}
+        ));
+        tree1.addTreeSelectionListener(new TreeSelectionListener() {
+			
+			@Override
+			public void valueChanged(TreeSelectionEvent e) {
+				  DefaultMutableTreeNode node = (DefaultMutableTreeNode)
+                          tree1.getLastSelectedPathComponent();
+			       if (node == null) return;
+			
+			       Object nodeInfo = node.getUserObject();
+			       if (node.isLeaf()) {
+			           BookInfo book = (BookInfo)nodeInfo;
+			           displayURL(book.bookURL);
+			           if (false) {
+			               System.out.print(book.bookURL + ":  \n    ");
+			           }
+			       } else {
+			           displayURL(helpURL);
+			       }
+			       if (false) {
+			           System.out.println(nodeInfo.toString());
+			       }
+				
+			}
+		});
+
+        splitPane = new JSplitPane();
+        splitPane.setContinuousLayout(true);
+        splitPane.setDividerLocation(210);
+        splitPane.setOneTouchExpandable(true);
+        splitPane.setLeftComponent(new JScrollPane(tree1));
+        splitPane.setRightComponent(new JScrollPane(editorPane1));
+
+        panel1 = new JPanel();
+        panel1.setLayout(new BorderLayout());
+        panel1.add(splitPane, BorderLayout.CENTER);
+        getContentPane().add(panel1, BorderLayout.CENTER);
+    }
+
+
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                GUIHelp guiHelp = new GUIHelp();
+                guiHelp.setVisible(true);
+            }
+        });
+    }
+}

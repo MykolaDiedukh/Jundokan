@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<HTML lang="en">
+<head>
+<meta charset="utf-8">
+<title>
+як друкувати конкретний протокол
+</title>
+<link type="text/css" rel="stylesheet" href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css">
+</head>
+<body>
+<div style="width:700px; margin:0 auto">
+<h3 style="text-align: left">
+як друкувати конкретний протокол
+</h3>
+<div style="width:600px; position:relative; float:left">
+<p> 
+ƒл€ того щоб в≥дразу роздрукувати вс≥ протоколи нам потр≥бно у в≥кн≥ УЎвидкий стартФ (рис. 2) <br>
+потр≥бно натиснути правою кнопкою миш≥ по потр≥бному нами протоколу ≥ по€витьс€ контекстне меню<br> 
+(рис. 11). ƒал≥ потр≥бно натиснути на пункт У–оздрукуватиФ, €кщо в даному змаганн≥ в≥дсутн≥ <br>
+протоколи то зТ€витьс€ попереджувальне в≥кно. ¬ ≥накшому випадку в≥дкриЇтьс€ в≥кно друку (рис. 12),<br> 
+де потр≥бно вказати необх≥дн≥ параметри дл€ друку.
+</p>
+
+</div>
+</div>
+</body>
+</html>

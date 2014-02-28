@@ -1,0 +1,175 @@
+package jundokan.view;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+import jundokan.view.templates.GUIHelp;
+
+public class MenuBar extends JMenuBar {
+	private JMenu editMenu;
+	private JMenu fileMenu;
+	private JMenu helpMenu;
+	private JMenu personMenu;
+	private PanelGame panelGame;
+	private PanelManagerGame panelManagerGame;
+
+	////editMenu items
+	private JMenuItem degreeItem;
+	private JMenuItem organizationItem;
+	private JMenuItem typeGameItem;	
+	
+	////fileMenu items
+	private JMenuItem closeGameItem;
+	private JMenuItem exitItem;
+	
+	////helpMenu items
+	private JMenuItem aboutItem;
+	private JMenuItem helpItem;	
+	
+	////personMenu items
+	private JMenuItem addPersonItem;
+	private JMenuItem listPersonItem;
+	
+	private ResourceBundle bundle;
+	public void setPanelManagerGame(PanelManagerGame panelManagerGame) {
+		this.panelManagerGame = panelManagerGame;
+	}
+	public void setPanelGame(PanelGame panelGame) {
+		this.panelGame = panelGame;
+	}
+	public MenuBar() {
+		Property prop = new Property(Paths.get(System.getProperty("user.dir"),"jundokan.ini").toString());
+		Locale.setDefault(new Locale(prop.getKey("locale")));
+		try {
+			Path path = Paths.get(System.getProperty("user.dir"),"/lang/",Locale.getDefault().toString());
+			bundle = ResourceBundle.getBundle("MenuBar", Locale.getDefault(), new URLClassLoader(new URL [] {path.toUri().toURL()}));
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		initFileMenu();
+		initEditMenu();
+		initPersonMenu();
+		initHelpMenu();
+	}
+	private void initEditMenu() {
+		editMenu = new JMenu(bundle.getString("editMenu"));
+		
+		degreeItem = new JMenuItem(bundle.getString("degreeItem"));
+		degreeItem.addActionListener(new ActionListener() {			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new GUIDegree().setVisible(true);
+				
+			}
+		});
+		editMenu.add(degreeItem);
+		
+		organizationItem = new JMenuItem(bundle.getString("organizationItem"));
+		organizationItem.addActionListener(new ActionListener() {			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new GUIOrganization().setVisible(true);
+				
+			}
+		});
+		editMenu.add(organizationItem);
+		
+		typeGameItem = new JMenuItem(bundle.getString("typeGameItem"));
+		typeGameItem.addActionListener(new ActionListener() {			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				GUITypeGame guiTypeGame = new GUITypeGame();
+				guiTypeGame.setTransferDataListener(panelGame);
+				guiTypeGame.setVisible(true);
+			}
+		});
+		editMenu.add(typeGameItem);
+		
+		add(editMenu);
+	}
+	public void setCloseGameItemListener(ActionListener actionListener) {
+		closeGameItem.addActionListener(actionListener);
+	}
+	private void initFileMenu() {
+		fileMenu = new JMenu(bundle.getString("fileMenu"));
+		
+		closeGameItem = new JMenuItem(bundle.getString("closeGameItem"));
+		fileMenu.add(closeGameItem);
+		
+		exitItem = new JMenuItem(bundle.getString("exitItem"));
+		exitItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+				
+			}
+		});
+		fileMenu.add(exitItem);
+		
+		add(fileMenu);
+	}
+	private void initHelpMenu() {
+		helpMenu = new JMenu(bundle.getString("helpMenu"));
+				
+		helpItem = new JMenuItem(bundle.getString("helpItem"));
+		helpItem.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				GUIHelp help = new GUIHelp();
+				help.setVisible(true);
+			}
+		});
+		helpMenu.add(helpItem);
+		
+		aboutItem = new JMenuItem(bundle.getString("aboutItem"));
+		helpMenu.add(aboutItem);
+		
+		add(helpMenu);
+	}
+	private void initPersonMenu() {
+		personMenu = new JMenu(bundle.getString("personMenu"));
+		
+		addPersonItem = new JMenuItem(bundle.getString("addPersonItem"));
+		addPersonItem.addActionListener(new ActionListener() {			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				GUIPersons person = new GUIPersons();
+				if(panelManagerGame != null) person.addTransferDataListener(panelManagerGame);
+				if(panelGame != null) person.addTransferDataListener(panelGame);
+				person.setVisible(true);
+				
+			}
+		});
+		personMenu.add(addPersonItem);
+		
+		listPersonItem = new JMenuItem(bundle.getString("listPersonItem"));
+		listPersonItem.addActionListener(new ActionListener() {			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				GUIListPerson listPerson = new GUIListPerson();
+				if(panelManagerGame != null) listPerson.addTransferDataListener(panelManagerGame);
+				if(panelGame != null) listPerson.addTransferDataListener(panelGame);
+				listPerson.setVisible(true);
+			}
+		});
+		personMenu.add(listPersonItem);
+		
+		add(personMenu);
+	}
+	public static int SIMPLE_MENU = 0;
+	public static int FULL_MENU = 1;
+}

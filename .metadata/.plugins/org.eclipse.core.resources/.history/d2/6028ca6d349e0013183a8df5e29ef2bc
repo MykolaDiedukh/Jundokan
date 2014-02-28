@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<HTML lang="en">
+<head>
+<meta charset="utf-8">
+<title>
+Як створити змагання
+</title>
+<link type="text/css" rel="stylesheet" href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css">
+</head>
+<body>
+<div style="width:700px; margin:0 auto">
+<h3 style="text-align: left">
+Як створити змагання
+</h3>
+<div style="width:600px; position:relative; float:left">
+Щоб створити змагання потрібно на вікні “Швидкий старт” натиснути кнопку “Створити змагання”.
+Після виконання даних дій відкривається вікно “Створення змагання” (рис. 1). На даному вікні 
+розміщено три кроки:
+	Крок 1. Формування змагання
+	Крок 2. Фільтрація учасників на змагання
+	Крок 3. Фініш
+Перший крок (рис.1) являється обов’язковим для заповнення, 
+тому потрібно помітити які будуть види змагань і ввести всі необхідні дані:
+	назву змагання;
+	місце проведення змагання;
+	дату початку і закінчення змагання;
+Після виконання даних дій можна перейти на крок два або крок три, 
+тому що крок два не є обов’язковим для заповнення.</p>
+</div>
+<img src="img1.png"  alt="альтернативный текст" height="485" width="1021">
+<div style="width:600px; position:relative; float:center"> 
+<basefont face="Arial, Helvetica, sans-serif" size="18" color="maroon">
+рис 1 Вікно “Створення змагання” і розділ “Крок 1” </div>
+</div>
+</body>
+</html>

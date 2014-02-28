@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="com"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JXSwing"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/ITextPDF"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JPedal"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JDBConnector"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JCalendar"/>
+	<classpathentry kind="lib" path="com/jundokan/lib/swingx-all-1.6.3.jar" sourcepath="com/jundokan/lib/swingx-all-1.6.3.jar"/>
+	<classpathentry kind="lib" path="com/jundokan/lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="com/jundokan/lib/jpedal_lgpl.jar"/>
+	<classpathentry kind="lib" path="com/jundokan/lib/itextpdf-5.4.1.jar"/>
+	<classpathentry kind="lib" path="com/jundokan/lib/sqlite-jdbc-3.7.2.jar"/>
+	<classpathentry kind="lib" path="com/jundokan/lib/mysql-connector-java-5.1.24-bin.jar"/>
+	<classpathentry kind="lib" path="com/jundokan/lib/pdfbox-app-1.8.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

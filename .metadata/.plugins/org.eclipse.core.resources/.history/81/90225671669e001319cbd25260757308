@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<HTML lang="en">
+<head>
+<meta charset="utf-8">
+<title>
+як видалити с≥тку
+</title>
+<link type="text/css" rel="stylesheet" href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css">
+</head>
+<body>
+<div style="width:700px; margin:0 auto">
+<h3 style="text-align: left">
+як видалити с≥тку
+</h3>
+<div style="width:600px; position:relative; float:left">
+<p> 
+ƒл€ того щоб видалити с≥тку нам необх≥дно перейти на в≥кно Ућенеджер змаганн€Ф (рис. 1) ≥ <br>
+вибрати необх≥дну нам с≥тку, €ку ми хочемо видалити.  оли ми виберемо необх≥дну нам с≥тку, <br>
+потр≥бно натиснути правою кнопкою миш≥ по назв≥ вибраноњ с≥тки ≥ в≥дразу зТ€витьс€ контекстне<br> 
+меню (рис. 18). ƒал≥ потр≥бно натиснути на пункт У¬идалити с≥ткуФ, п≥сл€ чого видалитьс€ с≥тка<br> 
+≥ учасники €к≥ були п≥дписан≥ на дану с≥тку, будуть в≥дписан≥ автоматично.
+</p>
+<img src="img5.png"  alt="альтернативный текст" height="514" width="750">
+<div style="width:600px; position:relative; float:left; text-align: center"> 
+рис 1 ¬≥кно Ућенеджер змаганн€Ф</div>
+</div>
+</div>
+</body>
+</html>

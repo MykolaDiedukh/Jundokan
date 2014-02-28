@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<HTML lang="en">
+<head>
+<meta charset="utf-8">
+<title>
+Як редагувати змагання
+</title>
+<link type="text/css" rel="stylesheet" href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css">
+</head>
+<body>
+<div style="width:700px; margin:0 auto">
+<h3 style="text-align: left">
+Як редагувати змагання
+</h3>
+<div style="width:600px; position:relative; float:left">
+<p>Щоб мати можливість редагувати змагання нам потрібно на вікні “Швидкий старт” (рис 4)<br> 
+натиснути 2 рази лівою кнопки миші на потрібне нам змагання і відкриється вікно “Менеджер<br> 
+змагання” (рис 5). Що дає можливість редагувати, видаляти, створювати сітки учасників<br>, 
+підписати і відписати учасників на змагання, роздрукувати протокол і зберегти протоколи.</p>
+
+<img src="img1.png"  alt="альтернативный текст" height="485" width="1021">
+<div style="width:600px; position:relative; float:left; text-align: center"> 
+рис 1 Вікно швидкий старт </div>
+<p>
+Другий крок (рис 2) являється не обов’язковим. На даному кроці підписують учасників на змагання,<br> 
+а саме відмічаються галочками в кожному виді змаганні навпроти учасника який приймає участь. Для<br> 
+полегшення є фільтрація учасників (рис 3) яка спрощую пошук людей для відбору до змагання.</p>
+<img src="img2.png"  alt="альтернативный текст" height="445" width="971">
+<div style="width:600px; position:relative; float:left; text-align: center"> 
+рис 2 Розділ “Другий крок”</div>
+<img src="img3.png"  alt="альтернативный текст" height="216" width="552">
+<div style="width:600px; position:relative; float:left; text-align: center"> 
+рис 3 Фільтри для учасників змагання</div>
+</div>
+</div>
+</body>
+</html>

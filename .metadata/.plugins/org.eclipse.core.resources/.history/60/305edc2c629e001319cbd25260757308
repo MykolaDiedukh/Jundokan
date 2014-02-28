@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<HTML lang="en">
+<head>
+<meta charset="utf-8">
+<title>
+як друкувати конкретний протокол
+</title>
+<link type="text/css" rel="stylesheet" href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css">
+</head>
+<body>
+<div style="width:700px; margin:0 auto">
+<h3 style="text-align: left">
+як друкувати конкретний протокол
+</h3>
+<div style="width:600px; position:relative; float:left">
+<p> 
+ƒл€ того щоб друкувати конкретний протокол нам необх≥дно перейти на в≥кно Ућенеджер змаганн€Ф ( рис. 1)<br> 
+≥ вибрати необх≥дний нам протокол дл€ друку.  оли ми виберемо необх≥дний нам протокол потр≥бно в≥дкрити<br> 
+даний протокол ≥ перейти в режим Уѕерегл€д протоколуФ.  оли перейдем в режим Уѕерегл€д протоколуФ <br>
+натиснути правою кнопкою миш≥ по протоколу ≥ по€витьс€ контекстне меню (рис. 13). ƒал≥ потр≥бно натиснути<br> 
+на пункт У–оздрукуватиФ, в≥дкриЇтьс€ в≥кно друку (рис. 14), де потр≥бно вказати необх≥дн≥ параметри дл€ друку.
+</p>
+<img src="img5.png"  alt="альтернативный текст" height="216" width="552">
+<div style="width:600px; position:relative; float:left; text-align: center"> 
+рис 1 ¬≥кно Ућенеджер змаганн€Ф</div>
+<img src="img12.png"  alt="альтернативный текст" height="216" width="552">
+<div style="width:600px; position:relative; float:left; text-align: center"> 
+рис 2  онтекстне меню €ке використовуЇтьс€ в режим≥ Уѕерегл€д протоколуФ</div>
+<img src="img13.png"  alt="альтернативный текст" height="360" width="456">
+<div style="width:600px; position:relative; float:left; text-align: center"> 
+рис 3 ¬≥кно друку при друкуванн≥ одного протоколу</div>
+</div>
+</div>
+</body>
+</html>

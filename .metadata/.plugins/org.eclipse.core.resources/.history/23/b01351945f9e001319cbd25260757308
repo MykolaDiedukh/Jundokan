@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<HTML lang="en">
+<head>
+<meta charset="utf-8">
+<title>
+як редагувати учасника
+</title>
+<link type="text/css" rel="stylesheet" href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css">
+</head>
+<body>
+<div style="width:700px; margin:0 auto">
+<h3 style="text-align: left">
+як редагувати учасника
+</h3>
+<div style="width:600px; position:relative; float:left">
+<p>ƒл€ того щоб редагувати учасника нам потр≥бно з в≥кна УЎвидкий стартФ (рис 1) або з в≥кна<br> 
+У—творенн€ змаганн€Ф (рис. 2) перейти у в≥кно Ућенеджер змаганн€Ф (рис 3). ƒе в≥дкриваЇтьс€<br> 
+пункт У”часникиФ (рис 4). ЌатискаЇмо на пункт учасник≥в дал≥ натискаЇмо на пункт У—писок <br>
+учасник≥вФ де в≥дкриЇтьс€ в≥кно У—писок учасник≥вФ (рис 9). Ќа даному в≥кн≥ потр≥бно вибрати<br> 
+учасника €кого ми будемо редагувати ≥ натиснути дв≥ч≥ л≥вою кнопкою миш≥ по учаснику, п≥сл€ <br>
+цього в≥дкриваЇтьс€ в≥кно У–едагуванн€ учасникаФ (рис 10).
+</p>
+<img src="img1.png"  alt="альтернативный текст" height="485" width="1021">
+<div style="width:600px; position:relative; float:left; text-align: center"> 
+рис 1 ¬≥кно швидкий старт </div>
+<img src="img1.png"  alt="альтернативный текст" height="485" width="1021">
+<div style="width:600px; position:relative; float:left; text-align: center"> 
+рис 2 ¬≥кно У—творенн€ змаганн€Ф ≥ розд≥л У рок 1Ф </div>
+<img src="img5.png"  alt="альтернативный текст" height="216" width="552">
+<div style="width:600px; position:relative; float:left; text-align: center"> 
+рис 3 ¬≥кно Ућенеджер змаганн€Ф</div>
+<img src="img6.png"  alt="альтернативный текст" height="101" width="315">
+<div style="width:600px; position:relative; float:left; text-align: center"> 
+рис 4 ѕункт У”часникиФ</div>
+<img src="img6.png"  alt="альтернативный текст" height="411" width="950">
+<div style="width:600px; position:relative; float:left; text-align: center"> 
+рис 5 ¬≥кно У—писок учасник≥вФ</div>
+<img src="img6.png"  alt="альтернативный текст" height="101" width="315">
+<div style="width:600px; position:relative; float:left; text-align: center"> 
+рис 6 ¬≥кно У–едагуванн€ учасникаФ</div>
+
+</div>
+</div>
+</body>
+</html>

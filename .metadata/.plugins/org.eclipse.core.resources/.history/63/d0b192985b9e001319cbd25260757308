@@ -1,0 +1,171 @@
+package jundokan.view.templates;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.print.Book;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
+import javax.swing.tree.*;
+
+import jundokan.view.Property;
+
+
+public class GUIHelp extends JFrame{
+    private JPanel panel1;
+    private JTree  tree1;
+    private JEditorPane editorPane1;
+    private JSplitPane splitPane;
+    private URL helpURL;
+    private ResourceBundle bundle;
+    
+    public GUIHelp() {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(700, 400);
+        init();
+        setTitle(bundle.getString("title"));
+
+    }
+    private class BookInfo {
+        public String bookName;
+        public URL bookURL;
+ 
+        public BookInfo(String book, String filename) {
+            bookName = book;
+            bookURL = getClass().getResource(filename);
+            if (bookURL == null) {
+                System.err.println("Couldn't find file: "
+                                   + filename);
+            }
+        }
+ 
+        public String toString() {
+            return bookName;
+        }
+    }
+    private void initHelp() {
+    	try{
+    		Property prop = new Property(Paths.get(System.getProperty("user.dir"),"jundokan.ini").toString());
+        	Locale.setDefault(new Locale(prop.getKey("locale")));
+        	Path path = Paths.get(System.getProperty("user.dir"),"/lang/",Locale.getDefault().toString());
+    		bundle = ResourceBundle.getBundle("GUIHelp", Locale.getDefault(), new URLClassLoader(new URL[]{path.toUri().toURL()}));
+            String s = "index.html";
+            helpURL = getClass().getResource(s);
+            if (helpURL == null) {
+                System.err.println("Couldn't open help file: " + s);
+            } else if (false) {
+                System.out.println("Help URL is " + helpURL);
+            }
+     
+            displayURL(helpURL);
+    	}catch (MalformedURLException e) {
+    		e.printStackTrace();
+    	}
+    	
+    }
+    private void displayURL(URL url) {
+        try {
+            if (url != null) {
+            	editorPane1.setPage(url);
+            } else { //null url
+            editorPane1.setText("File Not Found");
+                if (false) {
+                    System.out.println("Attempted to display a null URL.");
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Attempted to read a bad URL: " + url);
+        }
+    }
+    private void init() {
+        getContentPane().setLayout(new BorderLayout());
+        editorPane1 = new JEditorPane();
+        editorPane1.setEnabled(false);
+        initHelp();
+
+        tree1 = new JTree();
+        tree1.setModel(new DefaultTreeModel(
+        	new DefaultMutableTreeNode(bundle.getString("title")) {
+        		{
+        			DefaultMutableTreeNode node_1;
+        			node_1 = new DefaultMutableTreeNode(bundle.getString("games"));
+        				node_1.add(new DefaultMutableTreeNode(new BookInfo(bundle.getString("createGames"), "createGames.html")));
+        				node_1.add(new DefaultMutableTreeNode(new BookInfo(bundle.getString("editGames"), "Eclipse Platform What's New in Juno.htm")));
+        			add(node_1);
+        			node_1 = new DefaultMutableTreeNode(bundle.getString("members"));
+        				node_1.add(new DefaultMutableTreeNode(bundle.getString("addMembers")));
+        				node_1.add(new DefaultMutableTreeNode(bundle.getString("editMembers")));
+        				node_1.add(new DefaultMutableTreeNode(bundle.getString("subscribe")));
+        				node_1.add(new DefaultMutableTreeNode(bundle.getString("unsubscribe")));
+        			add(node_1);
+        			node_1 = new DefaultMutableTreeNode(bundle.getString("protocols"));
+        				node_1.add(new DefaultMutableTreeNode(bundle.getString("printAllProtocols")));
+        				node_1.add(new DefaultMutableTreeNode(bundle.getString("printOneProtocol")));
+        			add(node_1);
+	        			node_1 = new DefaultMutableTreeNode(bundle.getString("net"));
+	    				node_1.add(new DefaultMutableTreeNode(bundle.getString("createNet")));
+	    				node_1.add(new DefaultMutableTreeNode(bundle.getString("editNameNet")));
+	    				node_1.add(new DefaultMutableTreeNode(bundle.getString("deleteNet")));
+    				add(node_1);
+	    				node_1 = new DefaultMutableTreeNode(bundle.getString("filters"));
+	    				node_1.add(new DefaultMutableTreeNode(bundle.getString("useFilters")));
+    				add(node_1);
+        		}
+        	}
+        ));
+        tree1.addTreeSelectionListener(new TreeSelectionListener() {
+			
+			@Override
+			public void valueChanged(TreeSelectionEvent e) {
+				  DefaultMutableTreeNode node = (DefaultMutableTreeNode)
+                          tree1.getLastSelectedPathComponent();
+			       if (node == null) return;
+			
+			       Object nodeInfo = node.getUserObject();
+			       if (node.isLeaf()) {
+			           BookInfo book = (BookInfo)nodeInfo;
+			           displayURL(book.bookURL);
+			           if (false) {
+			               System.out.print(book.bookURL + ":  \n    ");
+			           }
+			       } else {
+			           displayURL(helpURL);
+			       }
+			       if (false) {
+			           System.out.println(nodeInfo.toString());
+			       }
+				
+			}
+		});
+
+        splitPane = new JSplitPane();
+        splitPane.setContinuousLayout(true);
+        splitPane.setDividerLocation(210);
+        splitPane.setOneTouchExpandable(true);
+        splitPane.setLeftComponent(new JScrollPane(tree1));
+        splitPane.setRightComponent(new JScrollPane(editorPane1));
+
+        panel1 = new JPanel();
+        panel1.setLayout(new BorderLayout());
+        panel1.add(splitPane, BorderLayout.CENTER);
+        getContentPane().add(panel1, BorderLayout.CENTER);
+    }
+
+
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                GUIHelp guiHelp = new GUIHelp();
+                guiHelp.setVisible(true);
+            }
+        });
+    }
+}

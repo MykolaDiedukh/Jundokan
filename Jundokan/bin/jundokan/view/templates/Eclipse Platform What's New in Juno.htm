@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="Copyright (c) Eclipse contributors and others 2011, 2012. This page is made available under license. For full details, see the LEGAL section in the documentation that contains this page." name="copyright"/>
+<meta content="en-us" http-equiv="Content-Language"/>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+<link charset="ISO-8859-1" href="../book.css" rel="STYLESHEET" type="text/css"/>
+<style type="text/css" xml:space="preserve">
+table.news td {border-top: solid thin black;}
+table.news tr {vertical-align: top;}
+table.news tr td.section {font-size: 20px; font-weight: bold;}
+table.news tr td.title {vertical-align: top; width: 30%; font-weight: bold;}
+table.news tr td.content {vertical-align: top; width: 70%;}
+</style>
+<title>Eclipse Platform What's New in Juno</title>
+
+<link charset="ISO-8859-1" href="../../../content/org.eclipse.help.webapp/advanced/breadcrumbs.css" rel="stylesheet" type="text/css"/>
+<script src="../../../content/org.eclipse.help/livehelp.js" type="text/javascript" xml:space="preserve"> </script>
+<link rel="stylesheet" href="../../../content/org.eclipse.sdk/narrow_book.css" type="text/css"></link>
+<link rel="stylesheet" href="../../../content/org.eclipse.sdk/win32_narrow_book.css" type="text/css"></link>
+
+</head>
+
+<body>
+<div class="help_breadcrumbs"><a href="javascript:liveAction('org.eclipse.help.ui', 'org.eclipse.help.ui.internal.ShowInTocAction', '0')" shape="rect">Workbench User Guide</a> &gt; </div>
+
+<h2>What's New in Juno</h2>
+<p>Here are descriptions of some of the more interesting or significant changes 
+made to the Eclipse Platform for the Juno (4.2) release of Eclipse. All platform
+features that are new since the Indigo (3.7) release are included here, including
+some functionality that was available in previous technology preview releases of Eclipse Platform 4.
+They are grouped into:</p>
+
+<ul>
+<li><a href="#Platform" shape="rect">Platform Changes</a></li>
+<li><a href="#Text" shape="rect">Editor Changes</a></li>
+<li><a href="#TeamCVS" shape="rect">Team/CVS Changes</a></li>
+<li><a href="#Debug" shape="rect">Debug Changes</a></li>
+</ul>
+
+<p>
+Plug-in developers will also be interested in the corresponding 
+<a href="../../org.eclipse.platform.doc.isv/whatsNew/platform_isv_whatsnew.html" shape="rect">What's new</a>
+document in the plug-in developer's guide.
+</p>
+
+<!-- ****************** START OF N&N TABLE ****************** -->
+<table border="0" cellpadding="10" cellspacing="0" class="news" width="600">
+  <tbody>
+
+  <!-- ******************** Platform ********************** -->
+  <tr>
+    <td class="section" colspan="2" id="Platform" rowspan="1"><h2>Platform Changes</h2></td>
+  </tr>
+
+  <tr id="new-look">
+    <td class="title" colspan="1" rowspan="1">New look for the workbench</td>
+    <td class="content" colspan="1" rowspan="1">
+    The default appearance of the platform user interface has been refreshed. The main
+    goals of this update were to adopt a more modern visual style, reduce clutter, and
+    use whitespace rather than extra keylines to separate user interface elements. Tabs
+    and part stacks have been redesigned to reduce emphasis on non-selected tabs and stacks.
+    <p><img alt="Screenshot of workbench with new default presentation" src="images/newlook.png" width="700"/></p></td>
+  </tr>
+
+  <tr id="search-bar">
+    <td class="title" colspan="1" rowspan="1">Global search bar</td>
+    <td class="content" colspan="1" rowspan="1">
+    The workbench now has a global search field in the tool bar. This provides a visible
+    affordance for the "Quick Access" feature, and may be used in the future to 
+    combine other kinds of searches into a single location.
+    <p><img alt="Screenshot of workbench highlighting search bar" src="images/searchbar.png"/></p></td>
+  </tr>
+
+  <tr id="flexible-part-layout">
+    <td class="title" colspan="1" rowspan="1">More flexible part layout</td>
+    <td class="content" colspan="1" rowspan="1">
+    You can now stack views and editors together by default. For example a view
+    that requires a large working area can be stacked in the editor area to provide more space.
+    <p><img alt="Screenshot of views and editors in editor area" src="images/mixvieweditor.png"/></p>
+    <p>Not only can you mix views and editors, but you can split the editor area to put a view 
+    beside an editor in the editor area, and then maximize the entire editor area to work with both at the same time.</p>
+    <p><img alt="Screenshot of views and editors in editor area" src="images/splitvieweditor.png" width="700"/></p>
+    </td>
+  </tr>
+
+  <tr id="editor-area-container">
+    <td class="title" colspan="1" rowspan="1">Editor area</td>
+    <td class="content" colspan="1" rowspan="1">A specialized container has been introduced to allow
+    the UI to properly represent the editor area. This affordance lets the user know that this
+    area behaves differently - for example the entire area can be maximized, and all views and
+    editors within the area will be affected.
+	<p>
+	You will not see any 'area' indication if there is only a single stack there. If there is more 
+	than one stack in the shared area, you see the area's boundary, with a 'fly out' hover area
+	that will show the minimize/maximize buttons.
+	</p>
+	<p>	<img alt="Editor Area" src="images/shared-area-polish.png"/></p>
+    </td>
+  </tr>
+
+  <tr id="detached-editors">
+    <td class="title" colspan="1" rowspan="1">Detached editors</td>
+    <td class="content" colspan="1" rowspan="1">
+      Editors can now be detached into their own windows. The detached 
+      editor will not be treated any differently from an editor
+      contained within the workbench window. This resolves 
+      <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=8886" shape="rect">bug 8886</a>,
+      one of the platform's oldest and most voted for enhancements.
+      <p><img alt="An editor detached from Eclipse's main workbench window." src="images/detached-editor.png"/></p>
+    </td>
+  </tr>
+
+  <tr id="multi-drag-sash">
+    <td class="title" colspan="1" rowspan="1">Multi-drag sash</td>
+    <td class="content" colspan="1" rowspan="1">
+	You can now place the cursor at the intersection of two or more sashes and
+	drag them all at the same time. When you are going to be dragging multiple sashes, the cursor
+	will change to one with 4-way arrows. The image below indicates one such
+	intersection with a red circle.
+	<p>	<img alt="Drag Sash" src="images/drag-sash.png"/></p>
+    </td>
+  </tr>
+
+  <tr id="platform-fade-effects">
+    <td class="title" colspan="1" rowspan="1">Fade transition on maximize</td>
+    <td class="content" colspan="1" rowspan="1">
+	A 'fade' effect has been added to the maximize / restore operation. You can turn the fade 
+	effect off using the animations preference, found under <b>Window &gt; Preferences &gt; General &gt; Appearance</b>
+	(see a <a href="http://www.youtube.com/watch?v=07kESXY5m2Q" shape="rect" target="_blank">video</a>).
+	</td>
+  </tr>
+
+  <tr id="new-icon">
+    <td class="title" colspan="1" rowspan="1">New high resolution icon</td>
+    <td class="content" colspan="1" rowspan="1">
+      The Eclipse SDK now has a shiny new icon. The icon is now in high resolution, making
+      for a much more polished appearance on modern operating systems.
+      <p><img alt="New Eclipse icon" src="images/icon.png"/></p>
+    </td>
+  </tr>
+
+  <tr id="open-resource-show-in">
+    <td class="title" colspan="1" rowspan="1">Open Resource dialog supports Show In</td>
+    <td class="content" colspan="1" rowspan="1">
+      The Open Resource dialog (<b>Ctrl+Shift+R</b>) has a new <b>Show In &gt; ...</b> context menu item that
+      allows to show selected resources in a view instead of opening them in an editor.
+      <p>
+          <img alt="" src="images/open-resource-show-in.png"/>
+      </p>
+    </td>
+  </tr>
+
+  <tr id="Platform-delete-project">
+    <td class="title" colspan="1" rowspan="1">Delete project dialog shows project location</td>
+    <td class="content" colspan="1" rowspan="1">
+      The Delete Resources dialog now shows the location of projects to be deleted on the file system:
+      <p>
+          <img alt="Projects to be deleted" src="images/delete-project.png"/>
+      </p>
+    </td>
+  </tr>
+
+  <tr id="swt-vo-context-menu">
+      <td class="title" colspan="1" rowspan="1">VoiceOver context menu</td>
+      <td class="content" colspan="1" rowspan="1">
+      On the Mac, you can now use the keyboard to open a context menu when VoiceOver is running,
+      using the standard VoiceOver key sequence Control+Option+Shift+M.
+      </td>
+    </tr>
+
+  <tr id="context-menu-shortcut">
+    <td class="title" colspan="1" rowspan="1">Shortcut for context menu on the Mac</td>
+    <td class="content" colspan="1" rowspan="1">
+      <b>Shift+F10</b> now also opens the context menu on the Mac, like it already worked on most other platforms.
+      The key binding of the new <b>Show Context Menu</b> command can be configured on the <b>General &gt; Keys</b> preference page.
+      <p><img alt="Screenshot of a context menu in the Synchronize view" src="images/context-menu.png"/></p>
+    </td>
+  </tr>
+
+  <tr id="screenshots">
+    <td class="title" colspan="1" rowspan="1">Editor area tab navigation</td>
+    <td class="content" colspan="1" rowspan="1">
+        Navigation arrows have been introduced to the sides of the editor area to allow
+        you to click and view the tabs that are to the left and right of the currently
+        selected tab. This is the default setting on new installations. Switching to the
+        Classic theme from the preferences (<b>Preferences &gt; General &gt; Appearance</b>)
+        will allow you to bring back the MRU behaviour from 3.x. The MRU behaviour can
+        also be toggled on and off via CSS by setting the <code>mru-visible</code> attribute
+        of an <code>MPartStack</code> to <code>true</code> or <code>false</code>.
+      <p>
+        <img alt="The shared area with left and right navigation arrows on its sides." src="images/tab-navigation.png"/>
+      </p>
+    </td>
+  </tr>
+
+  <tr id="lightweight-refresh">
+    <td class="title" colspan="1" rowspan="1">Lightweight refresh enabled by default</td>
+    <td class="content" colspan="1" rowspan="1">
+      In Eclipse 3.7 a new lightweight refresh mechanism was introduced. Files discovered to be out-of-sync 
+      by the workspace, for example while accessing the file content by an editor, 
+      are automatically asynchronously refreshed. In Eclipse 3.7 and 3.8 you have to enable this yourself
+      via <b>Preferences &gt; General &gt; Workspace</b> and select <b>Refresh on access</b>.
+      In Eclipse SDK 4.2 the mechanism is enabled by default.
+      <p><img alt="Lightweight refresh enabled by default" src="images/lightweight_refresh_by_default.png"/></p>
+    </td>
+  </tr>
+
+  <tr id="fullscreen">
+    <td class="title" colspan="1" rowspan="1">Support for MacOS X Full Screen</td>
+    <td class="content" colspan="1" rowspan="1">
+      A new <b>Window &gt; Toggle Full Screen</b> command is now supported on MacOS X Lion.
+    </td>
+  </tr>
+
+  <tr id="ant-1-8-3">
+    <td class="title" colspan="1" rowspan="1">Ant updated to 1.8.3</td>
+    <td class="content" colspan="1" rowspan="1">
+      The bundled version of Apache Ant in the platform has been updated to version 1.8.3.
+      <p>For more information on what is new in Ant 1.8.3 please see the Apache Ant <a href="http://apache.claz.org//ant/README.html" shape="rect">release notes</a>.</p>
+    </td>
+  </tr>
+
+  <tr id="ant-editor-extension-point">
+    <td class="title" colspan="1" rowspan="1">Enhanced Editor Support for Ant 1.8.2</td>
+    <td class="content" colspan="1" rowspan="1">
+      The Ant editor has been enhanced with support for the new <a href="http://ant.apache.org/manual/targets.html#extension-points" shape="rect">extension-point</a> 
+      features in Ant 1.8.2.
+      <p><img alt="Ant extension point editor content assist" src="images/ant-extension-assist.png"/></p>
+    </td>
+  </tr>
+
+  <tr id="add-buildfiles-dialog">
+    <td class="title" colspan="1" rowspan="1">Add all known buildfile types to Ant view</td>
+    <td class="content" colspan="1" rowspan="1">
+      The <b>Buildfile Selection</b> dialog for the <b>Ant</b> view has been updated to allow filtering 
+      for all known kinds of build files rather than just <em>*.xml</em> and <em>build.xml</em>.
+      <p><img alt="The Add Buildfiles dialog" src="images/add-buildfiles.png"/></p> 
+    </td>
+  </tr>
+
+  <!-- ******************** Text ********************** -->
+  <tr>
+    <td class="section" colspan="2" id="Text" rowspan="1"><h2>Editor Changes</h2></td>
+  </tr>
+
+  <tr id="Platform-use-saturated-colors">
+    <td class="title" colspan="1" rowspan="1">Use saturated colors in overview ruler</td>
+    <td class="content" colspan="1" rowspan="1">
+      The new <b>Use saturated colors in overview ruler</b> preference allows to show the annotations in the Overview ruler using saturated colors:
+      <p>
+          <img alt="Screenshot with saturated colors" src="images/use-saturated-colors-on.png" title="saturated colors"/>
+           
+          <img alt="Screenshot without saturated colors" src="images/use-saturated-colors-off.png" title="lighter colors"/>
+           
+          <img alt="Screenshot of the 'Accessibility' preference page" src="images/use-saturated-colors.png"/>
+      </p>
+      <p>
+        This option is turned off by default and can be enabled on the <b>General &gt; Editors &gt; Text Editors &gt; Accessibility</b>
+        page.
+      </p>
+    </td>
+  </tr>
+
+  <!-- ******************* Team/CVS ******************** -->
+  <tr>
+    <td class="section" colspan="2" id="TeamCVS" rowspan="1"><h2>Team/CVS Changes</h2></td>
+  </tr>
+
+  <tr id="cvs-sync-filters">
+    <td class="title" colspan="1" rowspan="1">Filters in CVS Sync View</td>
+    <td class="content" colspan="1" rowspan="1">
+      You can now use regular expressions to filter out changes in the CVS <b>Synchronize</b> view. 
+      To enable filters go to <b>Preferences &gt; General &gt; Team &gt; CVS &gt; Synchronize/Compare</b>, 
+      uncheck <b>Only look at timestamps to detect changes</b> and enter your regex pattern 
+      in the <b>Regular expression to ignore changes in synchronizations</b> field. Each difference 
+      in a change is checked against the pattern and is considered as matched, if either left or right side 
+      of the difference matches. If all diffs in a file match, the file is excluded from the view.
+      <p>
+        <img alt="Preferences for filters in CVS Sync View " src="images/filters-in-cvs-syncview.png"/>
+      </p>
+    </td>
+  </tr>
+
+  <!-- ******************** Debug ********************* -->
+  <tr>
+    <td class="section" colspan="2" id="Debug" rowspan="1"><h2>Debug Changes</h2></td>
+  </tr>
+
+  <tr id="Platform-debug-toolbar">
+    <td class="title" colspan="1" rowspan="1">Global debug toolbar</td>
+    <td class="content" colspan="1" rowspan="1">To improve the presentation of the Debug perspective, the common debug control commands 
+    (Stop, Resume, etc.) have been moved out of the <b>Debug</b> view and into the global toolbar.  
+	<p><img alt="Global debug toolbar" src="images/debug_toolbar-1.png"/></p>
+    <p>
+    The global toolbar can be customized with the <b>Window &gt; Customize Perspective...</b> action to add or 
+    remove debugging commands, or to show/hide the debug toolbar completely. 
+    </p>
+    <p>
+    Old toolbar behavior can be restored by first toggling the <b>Show Debug Toolbar</b> option in the <b>Debug</b> 
+    view's menu, then by disabling the Debug toolbar from the <b>Customize Perspective</b> dialog.</p>
+	<p><img alt="Debug view toolbar action" src="images/debug_toolbar-2.png"/></p>
+    </td>
+  </tr>
+
+  <tr id="edit-multi-line-vars">
+    <td class="title" colspan="1" rowspan="1">Improved editing of environment variables</td>
+    <td class="content" colspan="1" rowspan="1">
+        Editing multi-line environment variables is now much simpler with a new UI that presents the variables in a scrolling text widget.
+        The new UI can be found in the edit dialog for a multi-line environment variable on the <b>Environment</b> tab of a supporting launch configuration.
+        <p><img alt="New edit dialog for multi-line environment variables" src="images/multi-env-var.png"/></p>
+    </td>
+  </tr>
+
+  <tr id="launch-config-name-validation">
+    <td class="title" colspan="1" rowspan="1">Improved launch configuration name validation</td>
+    <td class="content" colspan="1" rowspan="1">
+    Now if you create a launch configuration with the name of an existing configuration, the type of the conflicting configuration
+    is noted in the error message.
+    <p><img alt="Launch configuration dialog showing name conflict error" src="images/lcd-name-error.png"/></p>
+    </td>
+  </tr>
+
+  <tr id="debug-tracing">
+    <td class="title" colspan="1" rowspan="1">Debug tracing</td>
+    <td class="content" colspan="1" rowspan="1">
+      JDT and Platform Debug have added all debug tracing settings to the <b>Tracing</b> preference page where they can be enabled and disabled as needed without restarting.
+      <p><img alt="Debug tracing options" src="images/debug-trace.png"/></p>
+    </td>
+  </tr>
+
+  <tr id="bp-view-sorting">
+    <td class="title" colspan="1" rowspan="1">Breakpoint view sorting</td>
+    <td class="content" colspan="1" rowspan="1">
+      The <b>Breakpoints</b> view now has improved sorting that will take into account any line 
+      numbers that appear in the label and sort accordingly.
+      <p><img alt="Breakpoint view sorting" src="images/bp-sorting.png"/></p>
+    </td>
+  </tr>
+
+  <!-- ****************** END OF N&N TABLE ****************** -->
+</tbody>
+</table>
+</body>
+</html>

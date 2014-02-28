@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<HTML lang="en">
+<head>
+<meta charset="utf-8">
+<title>
+як редагувати змаганн€
+</title>
+<link type="text/css" rel="stylesheet" href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css">
+</head>
+<body>
+<div style="width:700px; margin:0 auto">
+<h3 style="text-align: left">
+як редагувати змаганн€
+</h3>
+<div style="width:600px; position:relative; float:left">
+<p>ўоб мати можлив≥сть редагувати змаганн€ нам потр≥бно на в≥кн≥ УЎвидкий стартФ (рис 4)<br> 
+натиснути 2 рази л≥вою кнопки миш≥ на потр≥бне нам змаганн€ ≥ в≥дкриЇтьс€ в≥кно Ућенеджер<br> 
+змаганн€Ф (рис 5). ўо даЇ можлив≥сть редагувати, видал€ти, створювати с≥тки учасник≥в<br>, 
+п≥дписати ≥ в≥дписати учасник≥в на змаганн€, роздрукувати протокол ≥ зберегти протоколи.</p>
+
+<img src="img1.png"  alt="альтернативный текст" height="485" width="1021">
+<div style="width:600px; position:relative; float:left; text-align: center"> 
+рис 1 ¬≥кно швидкий старт </div>
+<img src="img5.png"  alt="альтернативный текст" height="216" width="552">
+<div style="width:600px; position:relative; float:left; text-align: center"> 
+рис 5 ¬≥кно Ућенеджер змаганн€Ф</div>
+</div>
+</div>
+</body>
+</html>

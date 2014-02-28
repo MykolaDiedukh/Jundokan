@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<HTML lang="en">
+<head>
+<meta charset="utf-8">
+<title>
+Як друкувати відразу всі протоколи
+</title>
+<link type="text/css" rel="stylesheet" href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css">
+</head>
+<body>
+<div style="width:700px; margin:0 auto">
+<h3 style="text-align: left">
+Як друкувати відразу всі протоколи
+</h3>
+<div style="width:600px; position:relative; float:left">
+<p> 
+Для того щоб відразу роздрукувати всі протоколи нам потрібно у вікні “Швидкий старт” (рис. 2) <br>
+потрібно натиснути правою кнопкою миші по потрібному нами протоколу і появиться контекстне меню<br> 
+(рис. 11). Далі потрібно натиснути на пункт “Роздрукувати”, якщо в даному змаганні відсутні <br>
+протоколи то з’явиться попереджувальне вікно. В інакшому випадку відкриється вікно друку (рис. 12),<br> 
+де потрібно вказати необхідні параметри для друку.
+</p>
+
+</div>
+</div>
+</body>
+</html>
